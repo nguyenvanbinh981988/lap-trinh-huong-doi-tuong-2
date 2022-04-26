@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="lamp" style="">electricLamp</button>
+<br>
+<br>
+<button onclick="turnOn()">SwithchOn</button>
+<button onclick="turnOff()">SwithchOff</button>
+
+</body>
+</html>
+<script>
+    class SwitchButton {
+          status = false
+          electriclamp;
+          constructor(status,electriclamp) {
+              this.status=status
+              this.electriclamp=electriclamp
+          }
+
+          swithchon() {
+              this.status = true
+              this.electriclamp=true
+          }
+
+          swithchoff() {
+              this.status= false
+              this.electriclamp=false
+          }
+    }
+
+    class ElectricLamp{
+        status = false
+        constructor(status) {
+            this.status = status
+        }
+
+        turnOn(){
+            this.status=true
+            document.getElementById('lamp').style= 'background-color: yellow'
+        }
+
+        turnOff(){
+            this.energy = false
+            document.getElementById('lamp').style= 'background-color: black'
+
+        }
+    }
+
+    let swithbutton = new SwitchButton(false,false)
+    let lamp = new ElectricLamp(swithbutton.electriclamp)
+
+    function turnOff() {
+        swithbutton.swithchoff()
+        lamp.turnOff()
+    }
+    function turnOn() {
+        swithbutton.swithchon()
+        lamp.turnOn()
+    }
+
+</script>
