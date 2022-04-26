@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="start()">
+<div id="game"></div>
+</body>
+</html>
+<script>
+    class SupperMan {
+        image;
+        top;
+        left;
+        height;
+
+        constructor(image,top,left,height) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.height = height;
+        }
+
+        gameplay() {
+          let a =   '<img id="myImg" src="' + this.image + '" style="position: absolute;top: ' + this.top +';left: '+ this.left +'px' +';height: ' + this.height +'px">'
+            return a
+        }
+
+        moveRight(){
+            this.left += 20
+        }
+    }
+
+
+    let hero = new SupperMan( 'luffy.jpg',10,100,100)
+
+    function start(){
+        if(hero.left < window.innerWidth - hero.height){
+            hero.moveRight();
+        }
+        document.getElementById('game').innerHTML = hero.gameplay();
+        setTimeout(start, 50)
+    }
+
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Battery {
+        energy
+        constructor(energy) {
+            this.energy = energy
+        }
+
+        upEnergy(){
+            this.energy++
+        }
+        downEnergy(){
+            this.energy--
+    }
+    }
+
+
+    class Phone {
+        battery
+        memoryDen = []
+        memoryGui = []
+        message = ''
+        statusOnOff = false
+
+        constructor(battery) {
+            this.battery=battery
+        }
+
+        send(phone){
+            if (statusOnOff) {
+                this.memoryGui.push(this.message)
+                phone.memoryDen.push(this.message)
+            }
+        }
+    }
+
+    let PinTQ = new Battery(60)
+    let Androl = new phone(Battery)
+    let Apple = new phone
+</script>
